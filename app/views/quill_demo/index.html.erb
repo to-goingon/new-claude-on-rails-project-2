@@ -1,0 +1,85 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-8">Quill.js Editor Demo</h1>
+  
+  <div class="max-w-4xl mx-auto">
+    <!-- Basic Quill Editor -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Basic Quill Editor</h2>
+      <div data-controller="quill" 
+           data-quill-placeholder-value="Start typing your content here...">
+        <div data-quill-target="editor" class="min-h-[200px] border border-gray-300 rounded-lg"></div>
+        <!-- Hidden input for form submission -->
+        <input type="hidden" data-quill-target="hiddenInput" name="content" />
+      </div>
+    </div>
+
+    <!-- Form Example -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Form Integration Example</h2>
+      <form class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+          <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md" 
+                 placeholder="Enter title" />
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Content</label>
+          <div data-controller="quill" 
+               data-quill-placeholder-value="Write your article content...">
+            <div data-quill-target="editor" class="min-h-[300px] border border-gray-300 rounded-lg"></div>
+            <input type="hidden" data-quill-target="hiddenInput" name="article[content]" />
+          </div>
+        </div>
+        
+        <div class="flex space-x-4">
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+            Save Article
+          </button>
+          <button type="button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Read-only Example -->
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold mb-4">Read-only Editor</h2>
+      <div data-controller="quill" 
+           data-quill-readonly-value="true">
+        <div data-quill-target="editor" class="min-h-[150px] border border-gray-300 rounded-lg bg-gray-50">
+          <h3>Sample Content</h3>
+          <p>This is a <strong>read-only</strong> Quill editor. You can see the formatting but cannot edit the content.</p>
+          <ul>
+            <li style="font-size: 12px;">Small text (12px)</li>
+            <li style="font-size: 18px;">Medium text (18px)</li>
+            <li style="font-size: 24px;">Large text (24px)</li>
+            <li style="font-size: 48px;">Extra large text (48px)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usage Instructions -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <h3 class="text-lg font-semibold text-blue-800 mb-3">사용법 (Usage)</h3>
+      <div class="text-blue-700 space-y-2">
+        <p><strong>기본 사용법:</strong></p>
+        <pre class="bg-blue-100 p-2 rounded text-sm overflow-x-auto"><code>&lt;div data-controller="quill"&gt;
+  &lt;div data-quill-target="editor"&gt;&lt;/div&gt;
+  &lt;input type="hidden" data-quill-target="hiddenInput" name="content" /&gt;
+&lt;/div&gt;</code></pre>
+        
+        <p><strong>옵션 설정:</strong></p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><code>data-quill-placeholder-value</code>: 플레이스홀더 텍스트</li>
+          <li><code>data-quill-readonly-value</code>: 읽기 전용 모드</li>
+        </ul>
+        
+        <p><strong>Font Size 기능:</strong></p>
+        <p>툴바에서 Font Size 드롭다운을 클릭하면 8px부터 72px까지의 크기를 선택할 수 있으며, 각 옵션은 실제 크기로 표시됩니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
